@@ -1,0 +1,4 @@
+<div *ngFor="let message of service.getMessages(); let i = index;">
+  {{message}}
+  <button class="close" type="button" (click)="service.deleteMessage(i)">×</button>
+</div>

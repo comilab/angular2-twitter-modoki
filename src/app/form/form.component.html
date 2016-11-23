@@ -1,0 +1,12 @@
+<form name="form" #form="ngForm" (ngSubmit)="submit(form)" class="form" novalidate>
+  <div class="form-group" [class.has-error]="form.invalid">
+    <textarea class="form-control" name="message" ngModel #message="ngModel" required maxlength="140"></textarea>
+    <div *ngIf="message.errors">
+      <div class="help-block" *ngIf="message.errors.required">入力して下さい</div>
+      <div class="help-block" *ngIf="message.errors.maxlength">140文字を超えています</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">送信</button>
+  </div>
+</form>
